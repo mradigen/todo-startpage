@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
+
+@font-face {
+  font-family: Simplifica;
+  src: url(https://cdn.glitch.com/bd404e3a-04c2-45aa-baf0-7fb93558fd6f%2FSIMPLIFICA%20Typeface.ttf?v=1623223819164);
+}
+
+:root {
+  --fg: #efefef;
+  --bg: #101010;
+/*   --mg: #888888; */
+  --mg: #1abc9c;
+}
+
+* {
+  font-family: "Simplifica";
+  font-size: 5vh;
+  line-height: 1.2;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+/* .dark {
+  background: var(--fg);
+  color: var(--bg);
+} */
+
+input {
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 65vw;
+/*   max-width: 400px; */
+  color: var(--fg);
+  text-align: center;
+  font-size: 5vh;
+/*   transition: padding 0.3s 0.2s ease; */
+  transition: padding 0.3s 0s ease;
+}
+input:focus {
+  padding-bottom: 5px;
+}
+input:focus + .line:after {
+  transform: scaleX(1);
+}
+.field {
+  position: absolute;
+  top: 25vh;
+}
+.field .line {
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: -8px;
+  background: var(--mg);
+}
+.field .line:after {
+  content: " ";
+  position: absolute;
+  float: right;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background: var(--fg);
+}
+
+.list {
+  position: absolute;
+  top: 35vh;
+  height: 65vh;
+}
+
+/* .list :first-child {
+  border: 2px solid var(--fg);
+}
+ */
+p {
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 50vw;
+  text-align: center;
+/*   font-size: 1.5em; */
+  cursor: pointer;
+  margin: 4vh;
+  padding: 2vh;
+  transition: 0.3s ease;
+}
+
+p:hover {
+  color: var(--bg);
+  background: var(--mg);
+  transform: scale(1.01) translateY(-0.5vh);
+  /*   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.striked {
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.striked:hover {
+  background: #ff6961;
+}
+
+.target {
+  border: 2px solid var(--fg);
+  font-style: bold;
+}
+
+.target:hover {
+  background: var(--fg);
+}
