@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@500&display=swap');
-
 @font-face {
   font-family: Simplifica;
-  src: url(https://cdn.glitch.com/bd404e3a-04c2-45aa-baf0-7fb93558fd6f%2FSIMPLIFICA%20Typeface.ttf?v=1623223819164);
+  src: url('./Simplifica.ttf');
 }
 
 :root {
