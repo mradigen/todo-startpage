@@ -2,6 +2,10 @@
 
 ToDo-Startpage is a super minimalistic to-do list which you can use as your startpage!
 
+## Example
+
+![Example](./ss.png)
+
 ## Installation
 
 ### Website
@@ -26,6 +30,10 @@ Right click to toggle target.
 Double left click to delete.
 
 Tasks are stored in your `localStorage`, so you don't need to worry about losing them!
+
+## To-do
+
+- Add light/dark theme switching.
 
 ## Contributing
 If you have any ideas for modifications, feel free to fork this repository! I'd love to see them!
