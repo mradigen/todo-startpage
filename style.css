@@ -29,10 +29,10 @@ body {
   user-select: none;
 }
 
-/* .dark {
+/*.dark {
   background: var(--fg);
   color: var(--bg);
-} */
+}*/
 
 input {
   background: 0;
