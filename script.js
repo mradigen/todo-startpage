@@ -32,11 +32,7 @@ inputBox.addEventListener('keyup', e => {
 });
 
 document.addEventListener("click", (e) => {
-	if (e.path[0] == document.body) {
-		toggleTheme();
-	} else if (e.path[0].tagName == "P") {
-		toggle(e.path[0]);
-	}
+	if (e.target == document.body) toggleTheme();
 });
 
 function add(task, j, striked = false) {
@@ -44,22 +40,23 @@ function add(task, j, striked = false) {
 	p.innerText = task;
 	p.ondblclick = remove;
 	// Shifted to global eventListener
-	//p.onclick = toggle;
+	p.onclick = toggle;
 	p.oncontextmenu = target;
 	tasks.push({ task: task, striked: false });
 	j.appendChild(p);
 	saveToLS();
 }
 
-function toggle(p) {
+function toggle(p, n) {
+  p = p.target
 	p.className = p.className == "striked" ? "" : "striked";
 	tasks[getTaskIndex(p)].striked = p.className == "striked";
 	saveToLS();
 }
 
 function remove(e) {
-	tasks.splice(getTaskIndex(e.path[0]), 1);
-	e.path[0].remove();
+	tasks.splice(getTaskIndex(e.target), 1);
+	e.target.remove();
 	saveToLS();
 }
 
@@ -68,11 +65,11 @@ function target(e) {
 		delete tasks[i].target;
 		tasksList.children[i].className = tasksList.children[i].className == "target" ? "" : tasksList.children[i].className;
 	}
-	e.path[0].className = e.path[0].className == "target" ? "" : "target";
-	if (e.path[0].className == "target") {
-		tasks[getTaskIndex(e.path[0])].target = true;
+	e.target.className = e.target.className == "target" ? "" : "target";
+	if (e.target.className == "target") {
+		tasks[getTaskIndex(e.target)].target = true;
 	} else {
-		delete tasks[getTaskIndex(e.path[0])].target;
+		delete tasks[getTaskIndex(e.target)].target;
 	}
 	saveToLS();
 	return false;
